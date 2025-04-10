@@ -1,4 +1,4 @@
-module github.com/keeponthewave/loco/proto
+module github.com/keeponthewave/loco-proto
 
 go 1.24.2
 
