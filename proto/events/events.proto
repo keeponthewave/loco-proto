@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+package events;
+
+option go_package = "github.com/loco/proto/events";
+
+service Events {
+  rpc GetAllEvents (google.protobuf.Empty) returns (EventsResponse);
+}
+
+message EventsResponse {
+  repeated Event events = 1;
+}
+
+message Event {
+  string eventId = 1;
+  repeated EventItem eventItems = 2;
+}
+
+message EventItem {
+  int32 thermogramId = 1;
+  int32 recordId = 2;
+  int32 clientId = 3;
+  uint64 ts = 4;
+  uint32 width = 5;
+  string type = 6;
+  string comment = 7;
+  string place = 8;
+  string zonesRawData = 9;
+  string number = 10;
+}
